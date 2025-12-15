@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Default Prediction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Default Prediction Model</h1>
+        <form id="loanForm">
+            <div class="form-group">
+                <label for="loan_amnt">Loan Amount:</label>
+                <input type="number" id="loan_amnt" name="loan_amnt" required>
+            </div>
+            <div class="form-group">
+                <label for="term">Term:</label>
+                <select id="term" name="term" required>
+                    <option value="36 months">36 months</option>
+                    <option value="60 months">60 months</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="int_rate">Interest Rate (%):</label>
+                <input type="number" id="int_rate" name="int_rate" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="installment">Installment:</label>
+                <input type="number" id="installment" name="installment" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="grade">Grade:</label>
+                <select id="grade" name="grade" required>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="emp_length">Employment Length:</label>
+                <select id="emp_length" name="emp_length" required>
+                    <option value="< 1 year">< 1 year</option>
+                    <option value="1 year">1 year</option>
+                    <option value="2 years">2 years</option>
+                    <option value="3 years">3 years</option>
+                    <option value="4 years">4 years</option>
+                    <option value="5 years">5 years</option>
+                    <option value="6 years">6 years</option>
+                    <option value="7 years">7 years</option>
+                    <option value="8 years">8 years</option>
+                    <option value="9 years">9 years</option>
+                    <option value="10+ years">10+ years</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="home_ownership">Home Ownership:</label>
+                <select id="home_ownership" name="home_ownership" required>
+                    <option value="RENT">Rent</option>
+                    <option value="OWN">Own</option>
+                    <option value="MORTGAGE">Mortgage</option>
+                    <option value="OTHER">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="annual_inc">Annual Income:</label>
+                <input type="number" id="annual_inc" name="annual_inc" required>
+            </div>
+            <div class="form-group">
+                <label for="verification_status">Verification Status:</label>
+                <select id="verification_status" name="verification_status" required>
+                    <option value="Not Verified">Not Verified</option>
+                    <option value="Source Verified">Source Verified</option>
+                    <option value="Verified">Verified</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="purpose">Purpose:</label>
+                <select id="purpose" name="purpose" required>
+                    <option value="debt_consolidation">Debt Consolidation</option>
+                    <option value="credit_card">Credit Card</option>
+                    <option value="home_improvement">Home Improvement</option>
+                    <option value="other">Other</option>
+                    <option value="major_purchase">Major Purchase</option>
+                    <option value="small_business">Small Business</option>
+                    <option value="car">Car</option>
+                    <option value="medical">Medical</option>
+                    <option value="moving">Moving</option>
+                    <option value="vacation">Vacation</option>
+                    <option value="house">House</option>
+                    <option value="wedding">Wedding</option>
+                    <option value="renewable_energy">Renewable Energy</option>
+                    <option value="educational">Educational</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dti">DTI Ratio (%):</label>
+                <input type="number" id="dti" name="dti" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="fico_range_low">FICO Range Low:</label>
+                <input type="number" id="fico_range_low" name="fico_range_low" min="300" max="850" required>
+            </div>
+            <div class="form-group">
+                <label for="inq_last_6mths">Inquiries Last 6 Months:</label>
+                <input type="number" id="inq_last_6mths" name="inq_last_6mths" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="open_acc">Open Accounts:</label>
+                <input type="number" id="open_acc" name="open_acc" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="pub_rec">Public Records:</label>
+                <input type="number" id="pub_rec" name="pub_rec" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="revol_bal">Revolving Balance:</label>
+                <input type="number" id="revol_bal" name="revol_bal" required>
+            </div>
+            <div class="form-group">
+                <label for="total_acc">Total Accounts:</label>
+                <input type="number" id="total_acc" name="total_acc" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="mort_acc">Mortgage Accounts:</label>
+                <input type="number" id="mort_acc" name="mort_acc" min="0" required>
+            </div>
+            <button type="submit">Predict Default Risk</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
